@@ -1,0 +1,169 @@
+.mui-off-canvas-left, .mui-off-canvas-right{
+    width:80%;
+    background-color : #fff;
+
+}
+.mui-off-canvas-wrap.mui-right .mui-inner-wrap{
+    -webkit-transform: translate3d(80%,0,0);
+    transform: translate3d(80%,0,0);
+}
+
+.page-relative {
+    position: relative;
+    height: 100%;
+}
+center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+
+}
+center button.mui-btn  {
+    width: 50%;
+    height: 50px;
+    display: block;
+    border: none;
+    background-color: #00ADF9;
+    color: #ffffff;
+    border-radius: 5px;
+}
+center button.mui-btn a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+}
+center button.add-thingy  {
+    margin-bottom: 20px;
+    margin-top: 40px;
+
+
+}
+center info {
+    font-size: 0.8em;
+}
+#modal header , #modalConfig header , .mui-content header{
+    background-color: #00ADF9;
+    line-height: 44px;
+    color: #ffffff;
+}
+#modal .mui-title , #modalConfig .mui-title ,  .mui-content header .mui-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff ;
+}
+.mui-content header .mui-action-menu ,.mui-content header  .mui-icon-gear {
+    color: #ffffff;
+}
+.mui-modal-content {
+    padding-top: 44px;
+    height: 100%;
+}
+header.mui-bar .mui-spin  {
+    animation: spin 3s infinite linear;
+    font-size: 20px;
+    color: #ffffff;
+}
+header.mui-bar .mui-icon-close {
+    color: #ffffff;
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.mui-content-padded {
+    margin: 0;
+}
+.mui-modal-content {
+    padding-left: 3%;
+}
+.mui-modal-content div.title {
+    padding: 8px 0;
+}
+#modal ul {
+    padding-bottom: 20px;
+}
+li , ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul>li {
+    width: 95%;
+    padding: 18px 0;
+    border-top: 1px solid #797979;
+    margin: 0 auto;
+}
+#modal ul>li:nth-child(1) {
+    border-top: none;
+}
+li .icon-right , li .icon-left {
+    color:#000;
+
+}
+/*li .icon-right {*/
+    /*margin-right: -5%;*/
+/*}*/
+/*li .icon-left {*/
+    /*margin-left: -5%;*/
+/*}*/
+ul>li .device-name {
+    margin-left: 10px;
+}
+
+#modalConfig .mui-pull-right , #modalConfig .mui-pull-left, #modal .mui-pull-left {
+    color: #ffffff;
+    font-size: 16px;
+}
+#modalConfig .mui-pull-left:before {
+    font-size: 24px;
+}
+#modalConfig .mui-pull-right.icon-right{
+    color: #000000;
+}
+#modalConfig .title {
+    padding-left: 3%;
+    font-size: 16px;
+}
+
+.condition {
+    padding-top: 30px;
+}
+.condition-body {
+    background-color: #ffffff;
+    padding-bottom: 5px;
+}
+.condition-body>div {
+    padding: 10px;
+    text-align: center;
+    color: #000000;
+}
+.condition div.header {
+    background-color: #eeeeee;
+    padding: 13px 0;
+    border: 1px solid #3c3c3c;
+    border-right: none;
+    border-left: none;
+}
+.condition div.header .mui-pull-left {
+    margin-left: 5%;
+    color: #3c3c3c;
+}
+.condition div.header .mui-pull-right i {
+    margin-right: 10px;
+}
+
+.condition .mui-icon-list{
+
+}
+.condition .num {
+    font-size: 18px;
+    padding-top: 10px;
+}
+.condition .icon {
+    font-size: 18px;
+    padding-top: 10px;
+}

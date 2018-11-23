@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <script src="./jquery.js"></script>
+    <script src="./js/mui.js"></script>
+    <link rel="stylesheet" href="./css/mui.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+</head>
+<body>
+<div class="mui-off-canvas-wrap mui-draggable">
+    <!-- 菜单容器 -->
+    <aside class="mui-off-canvas-left">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!-- 菜单具体展示内容 -->
+                ...
+            </div>
+        </div>
+    </aside>
+    <!-- 主页面容器 -->
+    <div class="mui-inner-wrap mui-content" >
+        <!-- 主页面标题 -->
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" id='toggle'></a>
+            <h1 class="mui-title">Loading</h1>
+            <a  class="mui-icon mui-icon-gear mui-pull-right setting"></a>
+        </header>
+        <div class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+
+                <div class="condition">
+                    <div class="mui-clearfix header">
+                        <span class="mui-pull-left">CURRENT CONDITIONS</span>
+                        <span class="mui-pull-right">
+                            <i class="mui-icon mui-icon-info"></i>
+                            <i class="mui-icon mui-icon-settings"></i>
+                        </span>
+                    </div>
+                    <div class="condition-body mui-row">
+                            <div class="mui-col-xs-4 tem">
+                                <div class="icon">
+                                    <i class="mui-icon mui-icon-weibo"></i>
+                                </div>
+                                <div class="num">
+                                    26.88 ℃
+                                </div>
+                            </div>
+                            <div class="mui-col-xs-4 pressure">
+                                <div class="icon">
+                                    <i class="mui-icon mui-icon-mic"></i>
+                                </div>
+                                <div class="num">
+                                   1017.21.hPa
+                                </div>
+                            </div>
+                            <div class="mui-col-xs-4 humidate">
+                                <div class="icon">
+                                    <i class="mui-icon mui-icon-camera"></i>
+                                </div>
+                                <div class="num">
+                                   24%
+                                </div>
+                            </div>
+                            <div class="mui-col-xs-4 co2">
+                                <div class="icon">
+                                    <i class="mui-icon mui-icon-refresh"></i>
+                                </div>
+                                <div class="num">
+                                    986ppm
+                                </div>
+                            </div>
+                            <div class="mui-col-xs-4 ppb">
+                                <div class="icon">
+                                    <i class="mui-icon mui-icon-navigate"></i>
+                                </div>
+                                <div class="num">
+                                    87ppb
+                                </div>
+                            </div>
+                            <div class="mui-col-xs-4 color">
+                                <div class="icon">
+                                    <i class="mui-icon mui-icon-list"></i>
+                                </div>
+                                <div class="num">
+                                    #000000
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+
+<script>
+    mui.init();
+    (function($){
+        $(".mui-scroll-wrapper").scroll();
+    })(mui);
+    $('header .mui-title').html(location.hash.slice(1) + "&nbsp;&nbsp;Environment")
+    document.getElementsByClassName('mui-inner-wrap')[0].addEventListener('drag', function(event) {
+        event.stopPropagation();
+    });
+
+
+    mui('body').on('tap' , '#toggle',function () {
+        lay()
+    })
+    function lay(){
+        mui('.mui-off-canvas-wrap').offCanvas().toggle()
+    };
+
+
+</script>
+</html>

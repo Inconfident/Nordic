@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="startButton()">Start</button>
+
+<span class="ee" style="display: block;width: 800px;height: 100px;border: 1px solid pink"></span>
+<br/>
+<span class="ff" style="display: block;width: 800px;height: 100px;border: 1px solid pink"></span>
+<script>
+
+    if (!('webkitSpeechRecognition' in window)) {
+        upgrade();
+    } else {
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+
+        recognition.onstart = function () {}
+
+        recognition.onresult = function (event) {}
+
+        recognition.onerror = function (event) {}
+
+
+        function startButton(event) {
+            final_transcript = '';
+            recognition.lang = 'cmn-Hans-CN';
+            recognition.start();
+        }
+        var final_span = document.querySelector('.ee');
+        var interim_span = document.querySelector('.ff');
+        recognition.onresult = function(event) {
+            console.log(event);
+            var interim_transcript = '';
+
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    final_transcript += event.results[i][0].transcript;
+                } else {
+                    interim_transcript += event.results[i][0].transcript;
+                }
+            }
+            final_transcript = (final_transcript);
+            final_span.innerHTML ='<br>'+ (final_transcript);
+            interim_span.innerHTML = '<br>' + (interim_transcript);
+        };
+
+
+    }
+</script>
+</body>
+</html>
